@@ -1,0 +1,109 @@
+/* 标签基础尺寸和定位 */
+.label {
+    width: 1800px; /* 6 inches * 300 DPI，标签总宽度 */
+    height: 1200px; /* 4 inches * 300 DPI，标签总高度 */
+    background: #ffffff;
+    position: relative;
+    padding: 75px; /* 0.25 inch * 300 DPI，标签内边距 */
+    box-sizing: border-box;
+}
+
+/* 标签内容布局容器 */
+.label-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* 垂直排列各部分 */
+    justify-content: space-between;
+}
+
+/* 条形码区域布局 */
+.barcode-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 条形码图像样式 */
+.barcode-section canvas {
+    max-width: 100%;
+    height: 300px; /* 条形码高度 */
+}
+
+/* 产品编号文本样式 */
+.product-text {
+    text-align: center;
+    font-size: 150px; /* 大号字体确保清晰可见 */
+    font-weight: bold;
+    margin-top: 10px;
+    line-height: 1; /* 紧凑的行高 */
+    letter-spacing: 2px; /* 字母间距 */
+}
+
+/* 描述文本区域布局 */
+.description-section {
+    flex-grow: 1; /* 占用剩余空间 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    margin-top: -350px; /* 向上偏移，调整与产品编号的间距 */
+    width: 100%;
+}
+
+/* 描述文本样式 */
+.description-text {
+    font-size: 96px;
+    font-weight: normal; /* 普通字重，区别于产品编号 */
+    text-align: center;
+    word-wrap: break-word; /* 长文本自动换行 */
+    max-width: 90%;
+    line-height: 1;
+    letter-spacing: 2px;
+    border: 4px solid #000; /* 黑色边框突出显示 */
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+/* BT号区域定位和布局 */
+.bt-section {
+    display: flex;
+    position: absolute;
+    left: 75px;
+    bottom: 30px; /* 距离底部距离 */
+    padding: 0;
+    max-width: calc(100% - 150px);
+}
+
+/* 二维码包装容器 */
+.qrcode-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 250px;
+}
+
+/* 二维码容器定位 */
+.qrcode-container {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    left: 50%;
+    bottom: 100%; /* 放置在BT号文本上方 */
+    transform: translateX(-50%); /* 水平居中 */
+    margin-bottom: 10px; /* 与BT号文本的间距 */
+}
+
+/* 二维码图像样式 */
+.qrcode {
+    width: 100%;
+    height: 100%;
+}
+
+/* BT号文本样式 */
+.bt-text {
+    font-size: 64px;
+    font-weight: bold;
+    white-space: nowrap; /* 防止文本换行 */
+    letter-spacing: 2px;
+    position: relative;
+} 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Label Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+    <link href="css/label.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>SOHO Apparel Product Label Generator</h1>
+            <div class="limits-info">
+                Character limits - Product: 19, Description: 61, BT#: 7
+            </div>
+        </header>
+        <div class="content-wrapper">
+            <div id="spreadsheet"></div>
+            <div class="buttons-container">
+                <button id="generateLabels">Generate Labels</button>
+                <button id="exportSheet">Export Sheet & Clear</button>
+                <div id="messageArea" class="message-area"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="labelContainer" style="display: none;"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/label.js"></script>
+</body>
+</html> 

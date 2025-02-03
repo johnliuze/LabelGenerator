@@ -1,0 +1,144 @@
+/* 基础样式重置和全局设置 */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* 防止页面出现滚动条 */
+}
+
+/* 主容器布局 */
+.main-container {
+    display: flex;
+    flex-direction: column; /* 垂直布局 */
+    height: 100vh; /* 占满视口高度 */
+    padding: 20px;
+    box-sizing: border-box; /* 内边距计入总宽高 */
+}
+
+/* 头部区域样式 */
+header {
+    flex: 0 0 auto; /* 不伸缩，保持自身大小 */
+    margin-bottom: 10px;
+}
+
+/* 标题样式 */
+h1 {
+    text-align: center;
+    color: #333;
+    margin: 0;
+    font-size: 30px;
+}
+
+/* 字符限制提示样式 */
+.limits-info {
+    text-align: center;
+    color: #666;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* 主要内容区域布局 */
+.content-wrapper {
+    flex: 1; /* 占用剩余空间 */
+    display: flex;
+    gap: 20px; /* 元素间距 */
+    min-height: 0; /* 防止flex布局溢出 */
+    padding: 0 20px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* 表格容器样式 */
+#spreadsheet {
+    width: 900px;
+    min-height: 0;
+    height: calc(100vh - 120px); /* 动态计算高度 */
+}
+
+/* 表格表头样式 */
+.header-cell {
+    font-weight: bold !important;
+    background-color: #f4f4f4 !important;
+    text-align: center !important;
+}
+
+/* 按钮区域容器样式 */
+.buttons-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+/* 按钮通用样式 */
+#generateLabels, #exportSheet {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease; /* 平滑过渡效果 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 生成标签按钮样式 */
+#generateLabels {
+    background-color: #2196F3; /* 蓝色主题 */
+}
+
+#generateLabels:hover {
+    background-color: #1976D2; /* 悬停时加深 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#generateLabels:active {
+    background-color: #1565C0; /* 点击时更深 */
+    transform: translateY(1px); /* 点击时下沉效果 */
+}
+
+/* 导出按钮样式 */
+#exportSheet {
+    background-color: #4CAF50; /* 绿色主题 */
+}
+
+#exportSheet:hover {
+    background-color: #43A047;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#exportSheet:active {
+    background-color: #388E3C;
+    transform: translateY(1px);
+}
+
+/* 消息区域样式 */
+.message-area {
+    margin-top: 15px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #d32f2f; /* 错误信息使用红色 */
+    max-height: 300px;
+    overflow-y: auto; /* 内容过多时可滚动 */
+    white-space: pre-line; /* 保留换行符 */
+    background-color: #fff;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    display: none; /* 默认隐藏 */
+}
+
+/* 消息区域非空时的样式 */
+.message-area:not(:empty) {
+    display: block;
+    border: 1px solid #ffcdd2; /* 红色边框 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} 
