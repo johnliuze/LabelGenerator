@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 type: 'text',
-                width: 520, // Description列宽度
+                width: 500, // Description列宽度
             },
             {
                 type: 'text',
@@ -125,9 +125,14 @@ document.addEventListener('DOMContentLoaded', function() {
         link.click();
         URL.revokeObjectURL(link.href); // 释放URL对象
 
-        // 清空表格并显示成功消息
+        messageArea.innerHTML = 'Data exported successfully';
+    });
+
+    // 清空功能
+    document.getElementById('clearSheet').addEventListener('click', function() {
+        const messageArea = document.getElementById('messageArea');
         hot.loadData(Array(50).fill().map(() => ['', '', '']));
-        messageArea.innerHTML = 'Data exported and sheet cleared';
+        messageArea.innerHTML = 'Sheet cleared';
     });
 
     // 导出表格实例到全局变量，供label.js使用

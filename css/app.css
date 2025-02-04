@@ -74,7 +74,7 @@ h1 {
 }
 
 /* 按钮通用样式 */
-#generateLabels, #exportSheet {
+#generateLabels, #exportSheet, #clearSheet {
     width: 100%;
     padding: 16px;
     font-size: 18px;
@@ -116,6 +116,21 @@ h1 {
 
 #exportSheet:active {
     background-color: #388E3C;
+    transform: translateY(1px);
+}
+
+/* 清空按钮样式 */
+#clearSheet {
+    background-color: #f44336; /* 红色主题 */
+}
+
+#clearSheet:hover {
+    background-color: #e53935;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#clearSheet:active {
+    background-color: #d32f2f;
     transform: translateY(1px);
 }
 
